@@ -1,7 +1,7 @@
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
+QT += serialport
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -17,13 +17,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwin.cpp
+    mainwin.cpp \
+    portsettings.cpp \
+    qcustomplot.cpp
 
 HEADERS += \
-    mainwin.h
+    mainwin.h \
+    portsettings.h \
+    qcustomplot.h
 
 FORMS += \
-    mainwin.ui
+    mainwin.ui \
+    portsettings.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
