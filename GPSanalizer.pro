@@ -16,13 +16,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    comport.cpp \
     main.cpp \
     mainwin.cpp \
+    nmea_parser.cpp \
     portsettings.cpp \
     qcustomplot.cpp
 
 HEADERS += \
+    comport.h \
     mainwin.h \
+    nmea_parser.h \
     portsettings.h \
     qcustomplot.h
 
@@ -34,3 +38,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Resourse.qrc

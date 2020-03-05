@@ -6,66 +6,22 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>850</width>
-    <height>507</height>
+    <width>890</width>
+    <height>604</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWin</string>
+   <string>NMEA parser</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Resourse.qrc">
+    <normaloff>:/icon/gps-icon.png</normaloff>:/icon/gps-icon.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0,0">
+   <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0">
     <property name="sizeConstraint">
      <enum>QLayout::SetDefaultConstraint</enum>
     </property>
-    <item>
-     <widget class="QGroupBox" name="groupBox_5">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>82</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>82</height>
-       </size>
-      </property>
-      <property name="title">
-       <string>Источник</string>
-      </property>
-      <layout class="QFormLayout" name="formLayout_8">
-       <property name="fieldGrowthPolicy">
-        <enum>QFormLayout::ExpandingFieldsGrow</enum>
-       </property>
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_41">
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QPushButton" name="pushButton">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QComboBox" name="comboBox"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_42">
-         <property name="text">
-          <string>TextLabel</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="rightMargin">
@@ -91,31 +47,180 @@
            <x>0</x>
            <y>0</y>
            <width>301</width>
-           <height>1217</height>
+           <height>1063</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_7">
           <property name="spacing">
-           <number>4</number>
+           <number>1</number>
           </property>
           <property name="leftMargin">
-           <number>4</number>
+           <number>1</number>
           </property>
           <property name="topMargin">
-           <number>4</number>
+           <number>1</number>
           </property>
           <property name="rightMargin">
-           <number>4</number>
+           <number>1</number>
           </property>
           <property name="bottomMargin">
-           <number>4</number>
+           <number>1</number>
           </property>
+          <item>
+           <widget class="QGroupBox" name="groupBox_5">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>220</height>
+             </size>
+            </property>
+            <property name="title">
+             <string>COM </string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <property name="spacing">
+              <number>3</number>
+             </property>
+             <property name="leftMargin">
+              <number>3</number>
+             </property>
+             <property name="topMargin">
+              <number>3</number>
+             </property>
+             <property name="rightMargin">
+              <number>3</number>
+             </property>
+             <property name="bottomMargin">
+              <number>3</number>
+             </property>
+             <item>
+              <layout class="QFormLayout" name="formLayout_3">
+               <property name="horizontalSpacing">
+                <number>3</number>
+               </property>
+               <property name="verticalSpacing">
+                <number>3</number>
+               </property>
+               <item row="0" column="1">
+                <widget class="QComboBox" name="comboBoxComPorts"/>
+               </item>
+               <item row="0" column="0">
+                <widget class="QPushButton" name="pushBtnCOMSearch">
+                 <property name="text">
+                  <string>Обновить</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_41">
+                 <property name="text">
+                  <string>Data bit:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_42">
+                 <property name="text">
+                  <string>Parity:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_43">
+                 <property name="text">
+                  <string>Stop bits:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="label_44">
+                 <property name="text">
+                  <string>Flow control:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QComboBox" name="comboBoxComParity"/>
+               </item>
+               <item row="4" column="1">
+                <widget class="QComboBox" name="comboBoxComStopbits"/>
+               </item>
+               <item row="5" column="1">
+                <widget class="QComboBox" name="comboBoxComFlowControl"/>
+               </item>
+               <item row="2" column="1">
+                <widget class="QComboBox" name="comboBoxComDatabits"/>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_45">
+                 <property name="text">
+                  <string>BaudRate:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QComboBox" name="comboBoxBaudRate"/>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushBtnComSaveSett">
+               <property name="text">
+                <string>Сохранить настройки</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <property name="bottomMargin">
+                <number>3</number>
+               </property>
+               <item>
+                <widget class="QPushButton" name="pushBtnComConnect">
+                 <property name="text">
+                  <string>Открыть</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushBtnComDisconnect">
+                 <property name="text">
+                  <string>Закрыть</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
           <item>
            <widget class="QGroupBox" name="groupBoxGNVTG">
             <property name="title">
              <string>GNVTG</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_3">
+             <property name="spacing">
+              <number>2</number>
+             </property>
+             <property name="leftMargin">
+              <number>2</number>
+             </property>
+             <property name="topMargin">
+              <number>2</number>
+             </property>
+             <property name="rightMargin">
+              <number>2</number>
+             </property>
+             <property name="bottomMargin">
+              <number>2</number>
+             </property>
              <item>
               <layout class="QFormLayout" name="formLayout_2">
                <property name="horizontalSpacing">
@@ -124,7 +229,7 @@
                <property name="verticalSpacing">
                 <number>1</number>
                </property>
-               <item row="1" column="0">
+               <item row="0" column="0">
                 <widget class="QLabel" name="label_20">
                  <property name="toolTip">
                   <string>Курс на истинный полюс (в градусах), затем следует буква Т;</string>
@@ -134,10 +239,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="1" column="1">
-                <widget class="QLineEdit" name="lineEdit_7"/>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="lEdVTG_CourseTrue"/>
                </item>
-               <item row="2" column="0">
+               <item row="1" column="0">
                 <widget class="QLabel" name="label_18">
                  <property name="toolTip">
                   <string>Курс на магнитный полюс (так же в градусах), затем следует буква М;</string>
@@ -147,10 +252,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="2" column="1">
-                <widget class="QLineEdit" name="lineEdit_6"/>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="lEdVTG_CourseMagnetic"/>
                </item>
-               <item row="3" column="0">
+               <item row="2" column="0">
                 <widget class="QLabel" name="label_19">
                  <property name="toolTip">
                   <string>Скорость относительно земли в узлах, затем следует буква N;</string>
@@ -160,10 +265,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="3" column="1">
-                <widget class="QLineEdit" name="lineEdit_8"/>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="lEdVTG_SpeedKn"/>
                </item>
-               <item row="4" column="0">
+               <item row="3" column="0">
                 <widget class="QLabel" name="label_21">
                  <property name="toolTip">
                   <string>Скорость относительно земли в км/ч, затем следует буква К;</string>
@@ -173,10 +278,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="4" column="1">
-                <widget class="QLineEdit" name="lineEdit_9"/>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="lEdVTG_SpeedKmh"/>
                </item>
-               <item row="5" column="0">
+               <item row="4" column="0">
                 <widget class="QLabel" name="label_22">
                  <property name="toolTip">
                   <string>A = Автономный режим
@@ -191,18 +296,8 @@ N = Недостоверные данные</string>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="1">
-                <widget class="QLineEdit" name="lineEdit_10"/>
-               </item>
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_24">
-                 <property name="text">
-                  <string>Строка</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="1">
-                <widget class="QLineEdit" name="lineEdit_29"/>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="lEdVTG_indicator"/>
                </item>
               </layout>
              </item>
@@ -216,30 +311,42 @@ N = Недостоверные данные</string>
             </property>
             <layout class="QFormLayout" name="formLayout_6">
              <property name="horizontalSpacing">
-              <number>1</number>
+              <number>2</number>
              </property>
              <property name="verticalSpacing">
-              <number>1</number>
+              <number>2</number>
+             </property>
+             <property name="leftMargin">
+              <number>2</number>
+             </property>
+             <property name="topMargin">
+              <number>2</number>
+             </property>
+             <property name="rightMargin">
+              <number>2</number>
+             </property>
+             <property name="bottomMargin">
+              <number>2</number>
              </property>
              <item row="0" column="0">
-              <widget class="QLabel" name="label_38">
+              <widget class="QLabel" name="label_39">
                <property name="text">
-                <string>Строки</string>
+                <string>Снутники GPS</string>
                </property>
               </widget>
              </item>
              <item row="0" column="1">
-              <widget class="QListWidget" name="listWidget_2"/>
+              <widget class="QLineEdit" name="lEdGSV_GPS_sat_count"/>
              </item>
              <item row="1" column="0">
-              <widget class="QLabel" name="label_39">
+              <widget class="QLabel" name="label_38">
                <property name="text">
-                <string>Снутники</string>
+                <string>GLONAS</string>
                </property>
               </widget>
              </item>
              <item row="1" column="1">
-              <widget class="QListWidget" name="listWidget_3"/>
+              <widget class="QLineEdit" name="lEdGSV_glonas_sat_count"/>
              </item>
             </layout>
            </widget>
@@ -250,6 +357,21 @@ N = Недостоверные данные</string>
              <string>GNGSA</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_5">
+             <property name="spacing">
+              <number>2</number>
+             </property>
+             <property name="leftMargin">
+              <number>2</number>
+             </property>
+             <property name="topMargin">
+              <number>2</number>
+             </property>
+             <property name="rightMargin">
+              <number>2</number>
+             </property>
+             <property name="bottomMargin">
+              <number>2</number>
+             </property>
              <item>
               <layout class="QFormLayout" name="formLayout_5">
                <property name="horizontalSpacing">
@@ -261,101 +383,54 @@ N = Недостоверные данные</string>
                <item row="0" column="0">
                 <widget class="QLabel" name="label_3">
                  <property name="text">
-                  <string>Строка 1</string>
+                  <string>Режим 2D/3D</string>
                  </property>
                 </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="lEdGSA_Mode"/>
                </item>
                <item row="1" column="0">
                 <widget class="QLabel" name="label_8">
                  <property name="text">
-                  <string>Строка 2</string>
+                  <string>Режим</string>
                  </property>
                 </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="lEdGSA_Type"/>
                </item>
                <item row="2" column="0">
-                <widget class="QLabel" name="label_9">
-                 <property name="text">
-                  <string>Список спутников</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="1">
-                <widget class="QListWidget" name="listWidget"/>
-               </item>
-               <item row="3" column="0">
                 <widget class="QLabel" name="label_16">
                  <property name="text">
                   <string>PDOP </string>
                  </property>
                 </widget>
                </item>
-               <item row="4" column="0">
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="lEdGSA_PDOP"/>
+               </item>
+               <item row="3" column="0">
                 <widget class="QLabel" name="label_17">
                  <property name="text">
                   <string>HDOP </string>
                  </property>
                 </widget>
                </item>
-               <item row="5" column="0">
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="lEdGSA_HDOP"/>
+               </item>
+               <item row="4" column="0">
                 <widget class="QLabel" name="label_23">
                  <property name="text">
                   <string>VDOP </string>
                  </property>
                 </widget>
                </item>
-               <item row="3" column="1">
-                <widget class="QLineEdit" name="lineEdit_30"/>
-               </item>
                <item row="4" column="1">
-                <widget class="QLineEdit" name="lineEdit_31"/>
-               </item>
-               <item row="5" column="1">
-                <widget class="QLineEdit" name="lineEdit_32"/>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLineEdit" name="lineEdit_33"/>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLineEdit" name="lineEdit_34"/>
+                <widget class="QLineEdit" name="lEdGSA_VDOP"/>
                </item>
               </layout>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item>
-           <widget class="QGroupBox" name="groupBox_4">
-            <property name="title">
-             <string>GNGLL</string>
-            </property>
-            <layout class="QFormLayout" name="formLayout_7">
-             <property name="horizontalSpacing">
-              <number>1</number>
-             </property>
-             <property name="verticalSpacing">
-              <number>1</number>
-             </property>
-             <property name="leftMargin">
-              <number>3</number>
-             </property>
-             <property name="topMargin">
-              <number>3</number>
-             </property>
-             <property name="rightMargin">
-              <number>3</number>
-             </property>
-             <property name="bottomMargin">
-              <number>3</number>
-             </property>
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_40">
-               <property name="text">
-                <string>Строка</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QLineEdit" name="lineEdit_35"/>
              </item>
             </layout>
            </widget>
@@ -366,6 +441,21 @@ N = Недостоверные данные</string>
              <string>GNMRC</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_2">
+             <property name="spacing">
+              <number>2</number>
+             </property>
+             <property name="leftMargin">
+              <number>2</number>
+             </property>
+             <property name="topMargin">
+              <number>2</number>
+             </property>
+             <property name="rightMargin">
+              <number>2</number>
+             </property>
+             <property name="bottomMargin">
+              <number>2</number>
+             </property>
              <item>
               <layout class="QFormLayout" name="formLayout">
                <property name="horizontalSpacing">
@@ -374,14 +464,21 @@ N = Недостоверные данные</string>
                <property name="verticalSpacing">
                 <number>1</number>
                </property>
-               <item row="1" column="0">
+               <item row="0" column="0">
                 <widget class="QLabel" name="label">
                  <property name="text">
                   <string>Время UTC</string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="0">
+               <item row="0" column="1">
+                <widget class="QTimeEdit" name="lEdRMCtime">
+                 <property name="displayFormat">
+                  <string>H:mm:ss</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
                 <widget class="QLabel" name="label_2">
                  <property name="toolTip">
                   <string>статус, А если данные достоверны или V если не достоверны;</string>
@@ -391,17 +488,20 @@ N = Недостоверные данные</string>
                  </property>
                 </widget>
                </item>
-               <item row="3" column="0">
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="lEdRMCstatus"/>
+               </item>
+               <item row="2" column="0">
                 <widget class="QLabel" name="label_4">
                  <property name="text">
                   <string>Широта</string>
                  </property>
                 </widget>
                </item>
-               <item row="3" column="1">
-                <widget class="QLineEdit" name="lineEdit"/>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="lEdRMCLat"/>
                </item>
-               <item row="4" column="0">
+               <item row="3" column="0">
                 <widget class="QLabel" name="label_5">
                  <property name="toolTip">
                   <string>полушарие, N для северного, S для южного;</string>
@@ -411,17 +511,20 @@ N = Недостоверные данные</string>
                  </property>
                 </widget>
                </item>
-               <item row="5" column="0">
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="lEdRMCNS"/>
+               </item>
+               <item row="4" column="0">
                 <widget class="QLabel" name="label_6">
                  <property name="text">
                   <string>Долгота</string>
                  </property>
                 </widget>
                </item>
-               <item row="5" column="1">
-                <widget class="QLineEdit" name="lineEdit_2"/>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="lEdRMCLon"/>
                </item>
-               <item row="6" column="0">
+               <item row="5" column="0">
                 <widget class="QLabel" name="label_7">
                  <property name="toolTip">
                   <string>полушарие, W  для западного, E для восточного;</string>
@@ -431,7 +534,10 @@ N = Недостоверные данные</string>
                  </property>
                 </widget>
                </item>
-               <item row="8" column="0">
+               <item row="5" column="1">
+                <widget class="QLineEdit" name="lEdRMCEW"/>
+               </item>
+               <item row="7" column="0">
                 <widget class="QLabel" name="label_10">
                  <property name="toolTip">
                   <string>скорость относительно земли в узлах (1 узел = 1.852 км/ч);</string>
@@ -441,10 +547,10 @@ N = Недостоверные данные</string>
                  </property>
                 </widget>
                </item>
-               <item row="8" column="1">
-                <widget class="QLineEdit" name="lineEdit_3"/>
+               <item row="7" column="1">
+                <widget class="QLineEdit" name="lEdRMCSpeedKn"/>
                </item>
-               <item row="9" column="0">
+               <item row="8" column="0">
                 <widget class="QLabel" name="label_11">
                  <property name="toolTip">
                   <string>азимут направления движения в градусах;</string>
@@ -454,21 +560,24 @@ N = Недостоверные данные</string>
                  </property>
                 </widget>
                </item>
-               <item row="9" column="1">
-                <widget class="QLineEdit" name="lineEdit_4"/>
+               <item row="8" column="1">
+                <widget class="QLineEdit" name="lEdRMCCourseOG"/>
                </item>
-               <item row="1" column="1">
-                <widget class="QTimeEdit" name="timeEdit"/>
-               </item>
-               <item row="10" column="0">
+               <item row="9" column="0">
                 <widget class="QLabel" name="label_12">
                  <property name="text">
                   <string>Дата</string>
                  </property>
                 </widget>
                </item>
-               <item row="11" column="0">
+               <item row="9" column="1">
+                <widget class="QDateEdit" name="datEditDate"/>
+               </item>
+               <item row="10" column="0">
                 <widget class="QLabel" name="label_13">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
                  <property name="toolTip">
                   <string>магнитное склонение в градусах;</string>
                  </property>
@@ -477,8 +586,18 @@ N = Недостоверные данные</string>
                  </property>
                 </widget>
                </item>
-               <item row="12" column="0">
+               <item row="10" column="1">
+                <widget class="QLineEdit" name="lineEdit_5">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="0">
                 <widget class="QLabel" name="label_14">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
                  <property name="toolTip">
                   <string>направление склонения, W для западного, E для восточного;</string>
                  </property>
@@ -487,13 +606,14 @@ N = Недостоверные данные</string>
                  </property>
                 </widget>
                </item>
-               <item row="10" column="1">
-                <widget class="QDateEdit" name="dateEdit"/>
-               </item>
                <item row="11" column="1">
-                <widget class="QLineEdit" name="lineEdit_5"/>
+                <widget class="QLineEdit" name="lineEdit_27">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                </widget>
                </item>
-               <item row="13" column="0">
+               <item row="12" column="0">
                 <widget class="QLabel" name="label_15">
                  <property name="toolTip">
                   <string>A = Автономный режим
@@ -508,30 +628,8 @@ N = Недостоверные данные</string>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_25">
-                 <property name="text">
-                  <string>Строка</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLineEdit" name="lineEdit_11"/>
-               </item>
-               <item row="2" column="1">
-                <widget class="QLineEdit" name="lineEdit_24"/>
-               </item>
-               <item row="4" column="1">
-                <widget class="QLineEdit" name="lineEdit_25"/>
-               </item>
-               <item row="6" column="1">
-                <widget class="QLineEdit" name="lineEdit_26"/>
-               </item>
                <item row="12" column="1">
-                <widget class="QLineEdit" name="lineEdit_27"/>
-               </item>
-               <item row="13" column="1">
-                <widget class="QLineEdit" name="lineEdit_28"/>
+                <widget class="QLineEdit" name="lEdRMCIndication"/>
                </item>
               </layout>
              </item>
@@ -544,6 +642,21 @@ N = Недостоверные данные</string>
              <string>GNGGA</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_4">
+             <property name="spacing">
+              <number>2</number>
+             </property>
+             <property name="leftMargin">
+              <number>2</number>
+             </property>
+             <property name="topMargin">
+              <number>2</number>
+             </property>
+             <property name="rightMargin">
+              <number>2</number>
+             </property>
+             <property name="bottomMargin">
+              <number>2</number>
+             </property>
              <item>
               <layout class="QFormLayout" name="formLayout_4">
                <property name="horizontalSpacing">
@@ -553,13 +666,6 @@ N = Недостоверные данные</string>
                 <number>1</number>
                </property>
                <item row="0" column="0">
-                <widget class="QLabel" name="label_26">
-                 <property name="text">
-                  <string>Строка</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
                 <widget class="QLabel" name="label_27">
                  <property name="toolTip">
                   <string>Время определения координат в формате ччммсс.сс по UTC</string>
@@ -569,42 +675,60 @@ N = Недостоверные данные</string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="0">
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="lEdGGA_time"/>
+               </item>
+               <item row="1" column="0">
                 <widget class="QLabel" name="label_28">
                  <property name="text">
                   <string>Широта</string>
                  </property>
                 </widget>
                </item>
-               <item row="3" column="0">
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="lEdGGA_lat"/>
+               </item>
+               <item row="2" column="0">
                 <widget class="QLabel" name="label_29">
                  <property name="text">
                   <string>Полушарие N/S</string>
                  </property>
                 </widget>
                </item>
-               <item row="4" column="0">
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="lEdGGA_NS"/>
+               </item>
+               <item row="3" column="0">
                 <widget class="QLabel" name="label_30">
                  <property name="text">
                   <string>Долгота</string>
                  </property>
                 </widget>
                </item>
-               <item row="5" column="0">
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="lEdGGA_lon"/>
+               </item>
+               <item row="4" column="0">
                 <widget class="QLabel" name="label_31">
                  <property name="text">
                   <string>Полушарие W/E</string>
                  </property>
                 </widget>
                </item>
-               <item row="6" column="0">
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="lEdGGA_WE"/>
+               </item>
+               <item row="5" column="0">
                 <widget class="QLabel" name="label_32">
                  <property name="text">
                   <string>Режим работы</string>
                  </property>
                 </widget>
                </item>
-               <item row="7" column="0">
+               <item row="5" column="1">
+                <widget class="QLineEdit" name="lEdGGA_work"/>
+               </item>
+               <item row="6" column="0">
                 <widget class="QLabel" name="label_33">
                  <property name="toolTip">
                   <string>количество спутников, использованных для получения координат;</string>
@@ -614,7 +738,10 @@ N = Недостоверные данные</string>
                  </property>
                 </widget>
                </item>
-               <item row="8" column="0">
+               <item row="6" column="1">
+                <widget class="QLineEdit" name="lEdGGA_satCount"/>
+               </item>
+               <item row="7" column="0">
                 <widget class="QLabel" name="label_34">
                  <property name="toolTip">
                   <string>HDOP</string>
@@ -624,7 +751,10 @@ N = Недостоверные данные</string>
                  </property>
                 </widget>
                </item>
-               <item row="9" column="0">
+               <item row="7" column="1">
+                <widget class="QLineEdit" name="lEdGGA_HDOP"/>
+               </item>
+               <item row="8" column="0">
                 <widget class="QLabel" name="label_35">
                  <property name="toolTip">
                   <string>Высота над уровнем моря в метрах, далее следует буква М;</string>
@@ -634,7 +764,10 @@ N = Недостоверные данные</string>
                  </property>
                 </widget>
                </item>
-               <item row="10" column="0">
+               <item row="8" column="1">
+                <widget class="QLineEdit" name="lEdGGA_AltitudeOfSea"/>
+               </item>
+               <item row="9" column="0">
                 <widget class="QLabel" name="label_36">
                  <property name="toolTip">
                   <string>Высота над геоидом в метрах, далее следует буква М;</string>
@@ -644,48 +777,25 @@ N = Недостоверные данные</string>
                  </property>
                 </widget>
                </item>
-               <item row="12" column="0">
+               <item row="9" column="1">
+                <widget class="QLineEdit" name="lEdGGA_AltitudeOfGeoid"/>
+               </item>
+               <item row="11" column="0">
                 <widget class="QLabel" name="label_37">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
                  <property name="text">
                   <string>Возраст дифф поправок</string>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="1">
-                <widget class="QLineEdit" name="lineEdit_12"/>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLineEdit" name="lineEdit_13"/>
-               </item>
-               <item row="2" column="1">
-                <widget class="QLineEdit" name="lineEdit_14"/>
-               </item>
-               <item row="3" column="1">
-                <widget class="QLineEdit" name="lineEdit_15"/>
-               </item>
-               <item row="4" column="1">
-                <widget class="QLineEdit" name="lineEdit_16"/>
-               </item>
-               <item row="5" column="1">
-                <widget class="QLineEdit" name="lineEdit_17"/>
-               </item>
-               <item row="7" column="1">
-                <widget class="QLineEdit" name="lineEdit_18"/>
-               </item>
-               <item row="9" column="1">
-                <widget class="QLineEdit" name="lineEdit_19"/>
-               </item>
-               <item row="10" column="1">
-                <widget class="QLineEdit" name="lineEdit_20"/>
-               </item>
-               <item row="12" column="1">
-                <widget class="QLineEdit" name="lineEdit_21"/>
-               </item>
-               <item row="8" column="1">
-                <widget class="QLineEdit" name="lineEdit_22"/>
-               </item>
-               <item row="6" column="1">
-                <widget class="QLineEdit" name="lineEdit_23"/>
+               <item row="11" column="1">
+                <widget class="QLineEdit" name="lineEdit_21">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                </widget>
                </item>
               </layout>
              </item>
@@ -697,7 +807,7 @@ N = Недостоверные данные</string>
        </widget>
       </item>
       <item>
-       <widget class="QCustomPlot" name="widget" native="true"/>
+       <widget class="QCustomPlot" name="MainPlot" native="true"/>
       </item>
      </layout>
     </item>
@@ -708,7 +818,7 @@ N = Недостоверные данные</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>850</width>
+     <width>890</width>
      <height>22</height>
     </rect>
    </property>
@@ -723,6 +833,8 @@ N = Недостоверные данные</string>
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="Resourse.qrc"/>
+ </resources>
  <connections/>
 </ui>
